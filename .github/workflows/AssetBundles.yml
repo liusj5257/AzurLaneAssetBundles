@@ -49,3 +49,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Push changes to tools repository
+        run: |
+          cd ${{ secrets.TOOLS_REPOSITORY }}
+          git add .
+          git commit -m "Commit message"
+          git push origin main
