@@ -60,8 +60,12 @@ jobs:
           git config --global user.email "AzurlaneBot@example.com"
           git config --global user.name "AzurlaneBot"
           git add .
-          git commit -m "update configs"
-          git push origin main
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "update configs"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
         working-directory: tools
       - name: Update AssetBundles
         run: |
