@@ -39,7 +39,7 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          python main.py --repair CN 
+          python main.py  CN 
           cd ClientAssets/CN/AssetBundles
         working-directory: tools/Assets
           
@@ -52,7 +52,6 @@ jobs:
           echo test, and deploy your project.
       - name: Push changes to tools repository
         run: |
-          cd ${{ secrets.TOOLS_REPOSITORY }}
           git add .
           git commit -m "test"
           git push origin main
