@@ -17,7 +17,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    
+      - uses: szenius/set-timezone@v1.2
+        with:
+          timezoneLinux: "Asia/Singapore"
+          timezoneMacos: "Asia/Singapore"
+          timezoneWindows: "Singapore Standard Time"
+
+      # Checks-out your repository 
       - uses: actions/checkout@v3
       
       - name: Checkout tools repo
@@ -39,22 +46,28 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          python main.py  CN 
-          cd ClientAssets/CN/AssetBundles
+          python main.py --repair CN
+          python main.py --repair JP
+          python main.py --repair KR
+          python main.py --repair EN
+          python main.py --repair TW  
+
         working-directory: tools/Assets
           
 
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Update configs to tools repository
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: Push changes to tools repository
-        run: |
-          git config --global user.email "svtion@example.com"
-          git config --global user.name "Bot"
+          git config --global user.email "AzurlaneBot@example.com"
+          git config --global user.name "AzurlaneBot"
           git add .
-          git commit -m "test"
+          git commit -m "update configs"
           git push origin main
         working-directory: tools
+      - name: Update AssetBundles
+        run: |
+          day=$(date +'%Y/%m/%d')
+          git config --global user.email "AzurlaneBot@example.com"
+          git config --global user.name "AzurlaneBot"
+          git add CN,JP,EN,KR,TW
+          git commit -m "$day"
+          git push origin main
