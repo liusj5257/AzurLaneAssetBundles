@@ -4,8 +4,8 @@ name: AssetBundles
 
 # Controls when the workflow will run
 on:
-  schedule:
-    - cron: "30 * * * *"  
+  # schedule:
+  #   - cron: "30 * * * *"  
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -47,11 +47,11 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          python main.py CN
-          python main.py JP
-          python main.py KR
-          python main.py EN
-          python main.py TW 
+          python main.py --repair CN
+          python main.py --repair JP
+          python main.py --repair KR
+          python main.py --repair EN
+          python main.py --repair TW 
 
         working-directory: tools/Assets
           
