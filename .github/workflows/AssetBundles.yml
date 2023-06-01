@@ -49,7 +49,7 @@ jobs:
           python main.py CN
           python main.py JP
           python main.py KR
-          python main.py --repair EN
+          python main.py EN
           python main.py TW 
 
         working-directory: tools/Assets
