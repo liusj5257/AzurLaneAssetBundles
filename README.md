@@ -1,2 +1,2 @@
 # AzurLaneAssetBundles
-自动更新各个服务器碧蓝航线的AssetBundles
+自动更新各个服务器的Loadingbg
