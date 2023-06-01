@@ -52,6 +52,8 @@ jobs:
           echo test, and deploy your project.
       - name: Push changes to tools repository
         run: |
+          git config --global user.email "svtion@example.com"
+          git config --global user.name "Bot"
           git add .
           git commit -m "test"
           git push origin main
