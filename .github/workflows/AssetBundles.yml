@@ -31,11 +31,13 @@ jobs:
         with:
           python-version: 3.9        
 
-      # Runs a single command using the runners shell
+      - name: Update Requirements
+        run: |
+          cd Assets
+          pip install -r requirements.txt
 
       - name: Update AssetBundles
         run: |
-          cd Assets
           python main.py CN --repair
           python main.py JP --repair
           python main.py CN --repair
