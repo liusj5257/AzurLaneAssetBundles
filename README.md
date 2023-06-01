@@ -1,0 +1,2 @@
+# AzurLaneAssetBundles
+自动更新各个服务器碧蓝航线的AssetBundles
