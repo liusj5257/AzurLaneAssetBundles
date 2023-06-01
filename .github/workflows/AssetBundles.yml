@@ -68,6 +68,6 @@ jobs:
           day=$(date +'%Y/%m/%d')
           git config --global user.email "AzurlaneBot@example.com"
           git config --global user.name "AzurlaneBot"
-          git add CN,JP,EN,KR,TW
+          git add CN JP EN KR TW
           git commit -m "$day"
           git push origin main
