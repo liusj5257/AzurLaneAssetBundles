@@ -38,9 +38,9 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          ls
           python main.py --repair CN 
           cd ClientAssets/CN/AssetBundles
+        working-directory: Assets
           
 
 
