@@ -24,7 +24,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ${{ secrets.TOOLS_REPOSITORY }}
-          path: "tools"
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
           
       # Runs a single command using the runners shell
