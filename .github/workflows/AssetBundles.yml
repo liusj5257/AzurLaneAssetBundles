@@ -46,8 +46,8 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          # python main.py --repair CN
-          python main.py --repair JP
+          python main.py --repair CN
+          python main.py JP
           # python main.py --repair KR
           # python main.py --repair EN
           # python main.py --repair TW  
