@@ -57,11 +57,12 @@ jobs:
 
       - name: Update configs to tools repository
         run: |
+          day=$(date +'%Y/%m/%d %H:%M:%S')
           git config --global user.email "AzurlaneBot@example.com"
           git config --global user.name "AzurlaneBot"
           git add .
           if [[ -n "$(git status --porcelain)" ]]; then
-            git commit -m "update configs"
+            git commit -m "$day update configs"
             git push origin main
           else
             echo "No changes to commit"
@@ -69,7 +70,7 @@ jobs:
         working-directory: tools
       - name: Update AssetBundles
         run: |
-          day=$(date +'%Y/%m/%d')
+          day=$(date +'%Y/%m/%d %H:%M:%S')
           git config --global user.email "AzurlaneBot@example.com"
           git config --global user.name "AzurlaneBot"
           git add CN JP EN KR TW
