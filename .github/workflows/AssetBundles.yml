@@ -38,9 +38,10 @@ jobs:
 
       - name: Update AssetBundles
         run: |
+          ls
           python main.py --repair CN 
           cd ClientAssets/CN/AssetBundles
-          ls
+          
 
 
       # Runs a set of commands using the runners shell
