@@ -25,6 +25,7 @@ jobs:
         with:
           repository: ${{ secrets.TOOLS_REPOSITORY }}
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
+          path: tools
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
@@ -33,14 +34,14 @@ jobs:
 
       - name: Update Requirements
         run: |
-          cd Assets
           pip install -r requirements.txt
+        working-directory: tools/Assets
 
       - name: Update AssetBundles
         run: |
           python main.py --repair CN 
           cd ClientAssets/CN/AssetBundles
-        working-directory: Assets
+        working-directory: tools/Assets
           
 
 
@@ -53,5 +54,6 @@ jobs:
         run: |
           cd ${{ secrets.TOOLS_REPOSITORY }}
           git add .
-          git commit -m "Commit message"
+          git commit -m "test"
           git push origin main
+        working-directory: tools
