@@ -32,6 +32,7 @@ jobs:
         with:
           repository: ${{ secrets.TOOLS_REPOSITORY }}
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
+          ref: All
           path: tools
 
       - name: Set up Python 3.9
