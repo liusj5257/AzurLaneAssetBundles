@@ -31,25 +31,28 @@ jobs:
           ref: All
           path: tools
 
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v3.1.4
         with:
-          python-version: 3.9        
-
-      - name: Cache pip
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version: 3.9
+          cache: 'pip'
+          cache-dependency-path: 'tools/Assets/requirements.txt'
 
 
+#       - name: Cache pip
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.cache/pip
+#           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+#           restore-keys: |
+#             ${{ runner.os }}-pip-
 
-      - name: Update Requirements
-        run: |
-          pip install -r requirements.txt
-        working-directory: tools/Assets
+
+
+#       - name: Update Requirements
+#         run: |
+#           pip install -r requirements.txt
+#         working-directory: tools/Assets
 
       - name: Update AssetBundles
         run: |
