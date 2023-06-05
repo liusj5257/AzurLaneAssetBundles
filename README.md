@@ -1,2 +1,2 @@
 # AzurLaneAssetBundles
-自动更新各个服务器的Loadingbg
+* 此分支应包括所有AssetBundles,可能包含未排除的脚本文件
