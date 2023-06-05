@@ -60,7 +60,7 @@ jobs:
           day=$(date +'%Y/%m/%d %H:%M:%S')
           if [[ -n "$(git status --porcelain)" ]]; then
             git commit -m "$day update configs"
-            git push origin main
+            git push origin All
           else
             echo "No changes to commit"
           fi
@@ -73,7 +73,7 @@ jobs:
           git add CN JP EN KR TW
           if [[ -n "$(git status --porcelain)" ]]; then
             git commit -m "$day"
-            git push origin main
+            git push origin All
           else
             echo "No changes to commit"
           fi          
