@@ -68,8 +68,8 @@ jobs:
       - name: Update AssetBundles
         run: |
           day=$(date +'%Y/%m/%d %H:%M:%S')
-          # git config --global user.email "AzurlaneBot@example.com"
-          # git config --global user.name "AzurlaneBot"
+          git config user.email "AzurlaneBot@example.com"
+          git config user.name "AzurlaneBot"
           git add CN JP EN KR TW
           if [[ -n "$(git status --porcelain)" ]]; then
             git commit -m "$day"
