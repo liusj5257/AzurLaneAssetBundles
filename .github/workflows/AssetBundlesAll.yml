@@ -56,11 +56,7 @@ jobs:
 
       - name: Update AssetBundles
         run: |
-          python main.py  CN
-          python main.py  JP
-          python main.py  KR
-          python main.py  EN
-          python main.py  TW 
+          python test.py  
 
         working-directory: tools/Assets
           
