@@ -1,7 +1,7 @@
 name: AssetBundlesMain
 
 on:
-#   workflow_dispatch:
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,21 +24,27 @@ jobs:
     needs: pre_check
     if: ${{ needs.pre_check.outputs.should_skip != 'true' }}
 
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
       - uses: szenius/set-timezone@v1.2
         with:
           timezoneLinux: "Asia/Singapore"
           timezoneMacos: "Asia/Singapore"
           timezoneWindows: "Singapore Standard Time"
-
-      # Checks-out your repository
+          
       - uses: actions/checkout@v3
         with:
           repository: liusj5257/AzurLaneTools
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
           ref: main
+  
+      - name: Checkout name repo
+        uses: actions/checkout@v3
+        with:
+          repository: liusj5257/azurlane_anti_name
+          ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
+          path: azurlane_anti_name
+          sparse-checkout: AssetBundles
 
       - name: Checkout AssetBundles repo
         uses: actions/checkout@v3
