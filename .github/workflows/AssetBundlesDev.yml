@@ -33,6 +33,13 @@ jobs:
           repository: ${{ secrets.TOOLS_REPOSITORY }}
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
           path: tools
+      - name: Checkout name repo
+        uses: actions/checkout@v3
+        with:
+          repository: liusj5257/azurlane_anti_name
+          ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
+          path: azurlane_anti_name
+          sparse-checkout: AssetBundles
 
 #       - name: Set up Python 3.9
 #         uses: actions/setup-python@v2
