@@ -46,7 +46,7 @@ jobs:
           ssh-key: ${{ secrets.TOOLS_DEPLOY_KEY }}
           ref: All
           path: AssetBundles
-          sparse-checkout: 'CN/*'
+          sparse-checkout: 'JP'
 
       - name: Set up Python
         uses: actions/setup-python@v3.1.4
