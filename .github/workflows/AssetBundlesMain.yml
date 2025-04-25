@@ -57,7 +57,7 @@ jobs:
           path: AssetBundles
 
       - name: Set up Python
-        uses: actions/setup-python@v3.1.4
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: 3.9
           cache: "pip"
