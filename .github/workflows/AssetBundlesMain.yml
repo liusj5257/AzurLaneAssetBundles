@@ -3,7 +3,7 @@ name: AssetBundlesMain
 on:
   workflow_dispatch:
   schedule:
-    - cron: '59 * * * *'
+    - cron: '0 14 * * 4'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
